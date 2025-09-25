@@ -1,0 +1,13 @@
+# Robots.txt for https://cv.riandikartiko.com
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /graphql
+
+# Sitemap location
+Sitemap: https://cv.riandikartiko.com/sitemap.xml
+
+# Crawl-delay for responsible crawling
+Crawl-delay: 1
