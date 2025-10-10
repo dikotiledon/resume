@@ -1,5 +1,5 @@
-import type { ResumeData } from "@/lib/types";
 import IdCardImage from "@/images/Id Card.jpg";
+import type { ResumeData } from "@/lib/types";
 
 export const RESUME_DATA: ResumeData = {
   name: "Riandi Kartiko",
@@ -193,25 +193,24 @@ export const RESUME_DATA: ResumeData = {
           included:
           <ul className="list-inside list-disc mt-2 pl-3">
             <li>
-              System Architecture & Design: Leading the planning, design, and
-              execution of scalable and secure systems, ensuring optimal
-              performance for complex business applications.
+              <span className="font-semibold">
+                System Architecture & Design:
+              </span>{" "}
+              Leading the planning, design, and execution of scalable and secure
+              systems, ensuring optimal performance for complex business
+              applications.
             </li>
             <li>
-              Development Leadership: Managing development teams, providing
-              technical mentorship, and ensuring the quality of code through the
-              implementation of best practices and code reviews.
+              <span className="font-semibold">Development Leadership:</span>{" "}
+              Managing development teams, providing technical mentorship, and
+              ensuring the quality of code through the implementation of best
+              practices and code reviews.
             </li>
             <li>
-              Client-Focused Solutions: Successfully delivering key projects,
-              including payment gateway integrations (Dana, Doku, Midtrans), CRM
-              systems, and custom internal business solutions, addressing both
-              B2B and B2C needs.
-            </li>
-            <li>
-              Cost & Efficiency Management: Evaluating IT costs and investments
-              to ensure efficient resource utilization and effective system
-              deployment.
+              <span className="font-semibold">Client-Focused Solutions:</span>{" "}
+              Successfully delivering key projects, including payment gateway
+              integrations (Dana, Doku, Midtrans), CRM systems, and custom
+              internal business solutions, addressing both B2B and B2C needs.
             </li>
           </ul>
           Through this role, I developed expertise in system design, cost

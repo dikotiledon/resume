@@ -147,6 +147,22 @@ docker build -t cv-app .
 docker run -p 3000:3000 cv-app
 ```
 
+## 🚀 Nginx Deployment
+
+This application can also be deployed as a static site on nginx:
+
+1. **Build the static site**:
+   ```bash
+   pnpm build
+   ```
+   This generates static files in the `out` directory.
+
+2. **Configure nginx** using the provided `nginx.conf` file.
+
+3. **Deploy** by copying the contents of the `out` directory to your nginx web root.
+
+See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed deployment instructions.
+
 ## 🔧 Configuration
 
 ### Environment Variables

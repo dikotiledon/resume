@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 import { RESUME_DATA } from "../data/resume-data";
 
-export const runtime = "edge";
+export const dynamic = "force-static";
 
 export const alt = "Minimalist Resume";
 export const size = {
@@ -12,6 +12,16 @@ export const size = {
 export const contentType = "image/png";
 
 export default async function Image() {
+  // Handle StaticImageData by extracting the src property
+  // For static export, we need to use an absolute URL
+  const avatarData = typeof RESUME_DATA.avatarUrl === 'string' 
+    ? null 
+    : RESUME_DATA.avatarUrl;
+    
+  const avatarUrl = typeof RESUME_DATA.avatarUrl === 'string' 
+    ? RESUME_DATA.avatarUrl 
+    : `https://cv.riandikartiko.com${RESUME_DATA.avatarUrl.src}`;
+
   return new ImageResponse(
     <div
       style={{
@@ -35,8 +45,10 @@ export default async function Image() {
       >
         {/* biome-ignore lint/performance/noImgElement: ImageResponse context requires img element */}
         <img
-          src={RESUME_DATA.avatarUrl}
+          src={avatarUrl}
           alt={RESUME_DATA.name}
+          width={avatarData?.width || 150}
+          height={avatarData?.height || 150}
           style={{
             width: "150px",
             height: "150px",
