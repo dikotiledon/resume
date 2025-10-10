@@ -1,0 +1,33 @@
+{
+  "Header": {
+    "name": "Riandi Kartiko",
+    "initials": "Diko",
+    "location": "Jakarta, Indonesia",
+    "about": "IT / Pengembang Perangkat Lunak / Insinyur Full Stack"
+  },
+  "Navigation": {
+    "summary": "Ringkasan",
+    "workExperience": "Pengalaman Kerja",
+    "education": "Pendidikan",
+    "skills": "Keterampilan",
+    "workProjects": "Proyek Kerja",
+    "sideProjects": "Proyek Sampingan"
+  },
+  "Summary": {
+    "title": "Ringkasan"
+  },
+  "WorkExperience": {
+    "title": "Pengalaman Kerja",
+    "present": "Sekarang"
+  },
+  "Education": {
+    "title": "Pendidikan"
+  },
+  "Skills": {
+    "title": "Keterampilan"
+  },
+  "Projects": {
+    "workTitle": "Proyek Kerja",
+    "sideTitle": "Proyek Sampingan"
+  }
+}

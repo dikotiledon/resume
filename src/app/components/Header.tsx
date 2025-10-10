@@ -1,3 +1,5 @@
+'use client';
+
 import { GlobeIcon, MailIcon, PhoneIcon } from "lucide-react";
 import type React from "react";
 import { Avatar } from "@/components/avatar";
@@ -6,6 +8,7 @@ import { XIcon } from "@/components/icons/x-icon";
 import { Button } from "@/components/ui/button";
 import { RESUME_DATA } from "@/data/resume-data";
 import type { IconType } from "@/lib/types";
+import { useLanguage } from "@/contexts/language-context";
 
 // Type-safe icon mapping
 const ICON_MAP: Record<
@@ -27,6 +30,7 @@ interface LocationLinkProps {
 }
 
 function LocationLink({ location, locationLink }: LocationLinkProps) {
+  const { t } = useLanguage();
   return (
     <p className="max-w-md items-center text-pretty font-mono text-xs text-foreground">
       <a
@@ -37,7 +41,7 @@ function LocationLink({ location, locationLink }: LocationLinkProps) {
         aria-label={`Location: ${location}`}
       >
         <GlobeIcon className="size-3" aria-hidden="true" />
-        {location}
+        {t('header.location')}
       </a>
     </p>
   );
@@ -163,14 +167,15 @@ function PrintContact({ contact, personalWebsiteUrl }: PrintContactProps) {
  * Header component displaying personal information and contact details
  */
 export function Header() {
+  const { t } = useLanguage();
   return (
     <header className="flex items-center justify-between">
       <div className="flex-1 space-y-1.5">
         <h1 className="text-3xl font-bold" id="resume-name">
-          {RESUME_DATA.name}
+          {t('header.name')}
         </h1>
         <p className="max-w-md text-pretty font-mono text-base text-foreground/80 print:text-[12px]">
-          {RESUME_DATA.about}
+          {t('header.about')}
         </p>
 
         <LocationLink

@@ -6,8 +6,8 @@ import { SectionSkeleton } from "@/components/section-skeleton";
 import { RESUME_DATA } from "@/data/resume-data";
 import { generateResumeStructuredData } from "@/lib/structured-data";
 import { Education } from "./components/Education";
-import { Header } from "./components/Header";
-import { Projects } from "./components/Projects";
+import Header from "./components/Header.client";
+import Projects from "./components/Projects.client";
 import { Skills } from "./components/Skills";
 import { Summary } from "./components/Summary";
 import { WorkExperience } from "./components/WorkExperience";
@@ -76,7 +76,7 @@ export default function ResumePage() {
         id="main-content"
       >
         <div className="sr-only">
-          <h1>{RESUME_DATA.name}&apos;s Resume</h1>
+          <h1>{RESUME_DATA.name}'s Resume</h1>
         </div>
 
         <section
@@ -114,9 +114,23 @@ export default function ResumePage() {
               </Suspense>
             </SectionErrorBoundary>
 
-            <SectionErrorBoundary sectionName="Projects">
+            <SectionErrorBoundary sectionName="Work Projects">
               <Suspense fallback={<SectionSkeleton lines={5} />}>
-                <Projects projects={RESUME_DATA.projects} />
+                <Projects 
+                  projects={RESUME_DATA.workProjects} 
+                  title="Work projects" 
+                  sectionId="work-projects" 
+                />
+              </Suspense>
+            </SectionErrorBoundary>
+
+            <SectionErrorBoundary sectionName="Side Projects">
+              <Suspense fallback={<SectionSkeleton lines={5} />}>
+                <Projects 
+                  projects={RESUME_DATA.projects} 
+                  title="Side projects" 
+                  sectionId="side-projects" 
+                />
               </Suspense>
             </SectionErrorBoundary>
           </div>

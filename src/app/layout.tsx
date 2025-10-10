@@ -5,6 +5,7 @@ import "./globals.css";
 import type React from "react";
 import { ErrorBoundary } from "@/components/error-boundary";
 import { RESUME_DATA } from "@/data/resume-data";
+import { LanguageProvider } from "@/contexts/language-context";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://cv.riandikartiko.com"),
@@ -80,7 +81,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <ErrorBoundary>{children}</ErrorBoundary>
+        <LanguageProvider>
+          <ErrorBoundary>{children}</ErrorBoundary>
+        </LanguageProvider>
       </body>
       <Analytics />
     </html>

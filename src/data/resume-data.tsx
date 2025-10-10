@@ -42,7 +42,7 @@ export const RESUME_DATA: ResumeData = {
   education: [
     {
       school: "Telkom University",
-      degree: "Bachelor's Degree in Informatics",
+      degree: "Bachelor's Degree in Informatics. GPA: 3.21/4.00",
       start: "2016",
       end: "2021",
     },
@@ -248,6 +248,37 @@ export const RESUME_DATA: ResumeData = {
     "Load Balancers (Haproxy, Nginx)",
     "Version Control (Git, GitHub, GitLab, Bitbucket)",
     "Microsoft Office (Word, Excel, PowerPoint, etc)",
+  ],
+  workProjects: [
+    // Projects from work experience at Samsung Electronics Indonesia
+    {
+      title: "Bonded Zone Inventory Monitoring",
+      techStack: ["PHP", "JavaScript", "Laravel", "Nginx", "Redis", "Microsoft SQL Server"],
+      description:
+        "Bonded Zone Inventory Monitoring is a Laravel web system that consolidates ERP and non‑ERP inventory to provide near‑real‑time, auditable customs reports, exports, and role‑based access for PER‑09/BC/2014 and AEO compliance.",
+      link: {
+        label: "customs.sein-p.com",
+        href: "https://customs.sein-p.com",
+      },
+    },
+    {
+      title: "IT Strategy & Execution System",
+      techStack: ["PHP", "JavaScript", "Python", "SQL", ".NET", "Vue.js", "Node.js"],
+      description:
+        "Developed systems to support IT strategy execution, enabling Samsung's broader business strategy. Implemented solutions for scanning technical possibilities and diagnosing system fit with business goals.",
+    },
+    {
+      title: "System Development & Maintenance Platform",
+      techStack: ["PHP", "JavaScript", "Vue.js", "MySQL", "Nginx", "Linux"],
+      description:
+        "Led the planning, development, and maintenance of IT systems and infrastructure. Applied software engineering principles and best practices to meet customer needs and ensure system reliability.",
+    },
+    {
+      title: "IT Security Enhancement Initiative",
+      techStack: ["Python", "Linux", "Network Security", "Firewalls"],
+      description:
+        "Collaborated on developing IT security policies to protect against security threats. Researched new security technologies and deployed firewalls and antivirus applications.",
+    },
   ],
   projects: [
     {

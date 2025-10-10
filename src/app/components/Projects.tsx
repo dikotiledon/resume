@@ -1,3 +1,5 @@
+'use client';
+
 import { Badge } from "../../components/ui/badge";
 import {
   Card,
@@ -8,6 +10,7 @@ import {
 } from "../../components/ui/card";
 import { Section } from "../../components/ui/section";
 import type { RESUME_DATA } from "../../data/resume-data";
+import { useLanguage } from "@/contexts/language-context";
 
 type ProjectTags = readonly string[];
 
@@ -113,22 +116,27 @@ function ProjectCard({ title, description, tags, link }: ProjectCardProps) {
 }
 
 interface ProjectsProps {
-  projects: (typeof RESUME_DATA)["projects"];
+  projects: (typeof RESUME_DATA)["projects"] | (typeof RESUME_DATA)["workProjects"];
+  title: string;
+  sectionId: string;
 }
 
 /**
- * Section component displaying all side projects
+ * Section component displaying projects
  */
-export function Projects({ projects }: ProjectsProps) {
+export function Projects({ projects, title, sectionId }: ProjectsProps) {
+  const { t } = useLanguage();
+  const translatedTitle = title === "Work projects" ? t('projects.workTitle') : t('projects.sideTitle');
+  
   return (
     <Section className="scroll-mb-16 print:space-y-4">
-      <h2 className="text-xl font-bold" id="side-projects">
-        Side projects
+      <h2 className="text-xl font-bold" id={sectionId}>
+        {translatedTitle}
       </h2>
       <div
         className="-mx-3 grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 print:grid-cols-3 print:gap-2"
         role="feed"
-        aria-labelledby="side-projects"
+        aria-labelledby={sectionId}
       >
         {projects.map((project) => (
           <article

@@ -1,0 +1,33 @@
+{
+  "Header": {
+    "name": "Riandi Kartiko",
+    "initials": "Diko",
+    "location": "Jakarta, Indonesia",
+    "about": "IT / Software Developer / Full Stack Engineer"
+  },
+  "Navigation": {
+    "summary": "Summary",
+    "workExperience": "Work Experience",
+    "education": "Education",
+    "skills": "Skills",
+    "workProjects": "Work Projects",
+    "sideProjects": "Side Projects"
+  },
+  "Summary": {
+    "title": "Summary"
+  },
+  "WorkExperience": {
+    "title": "Work Experience",
+    "present": "Present"
+  },
+  "Education": {
+    "title": "Education"
+  },
+  "Skills": {
+    "title": "Skills"
+  },
+  "Projects": {
+    "workTitle": "Work Projects",
+    "sideTitle": "Side Projects"
+  }
+}

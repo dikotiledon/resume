@@ -3,6 +3,12 @@ const nextConfig = {
   // Enable React strict mode for better development experience
   reactStrictMode: true,
 
+  // Internationalization
+  i18n: {
+    locales: ['en', 'id'],
+    defaultLocale: 'en',
+  },
+
   // Optimize images
   images: {
     domains: ['avatars.githubusercontent.com'],
