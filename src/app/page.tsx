@@ -116,20 +116,20 @@ export default function ResumePage() {
 
             <SectionErrorBoundary sectionName="Work Projects">
               <Suspense fallback={<SectionSkeleton lines={5} />}>
-                <Projects 
-                  projects={RESUME_DATA.workProjects} 
-                  title="Work projects" 
-                  sectionId="work-projects" 
+                <Projects
+                  projects={RESUME_DATA.workProjects}
+                  title="Work projects"
+                  sectionId="work-projects"
                 />
               </Suspense>
             </SectionErrorBoundary>
 
             <SectionErrorBoundary sectionName="Side Projects">
               <Suspense fallback={<SectionSkeleton lines={5} />}>
-                <Projects 
-                  projects={RESUME_DATA.projects} 
-                  title="Side projects" 
-                  sectionId="side-projects" 
+                <Projects
+                  projects={RESUME_DATA.projects}
+                  title="Side projects"
+                  sectionId="side-projects"
                 />
               </Suspense>
             </SectionErrorBoundary>

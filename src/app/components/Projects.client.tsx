@@ -1,5 +1,5 @@
-'use client';
+"use client";
 
-import { Projects } from './Projects';
+import { Projects } from "./Projects";
 
 export default Projects;

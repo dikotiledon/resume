@@ -3,20 +3,19 @@ import "reflect-metadata";
 import { ApolloServer } from "@apollo/server";
 import { ApolloServerPluginLandingPageLocalDefault } from "@apollo/server/plugin/landingPage/default";
 import { startServerAndCreateNextHandler } from "@as-integrations/next";
-import { type NextRequest } from "next/server";
+import type { GraphQLFormattedError } from "graphql";
+import type { NextRequest } from "next/server";
 import { buildSchema } from "type-graphql";
 import { MeResolver } from "../../apollo/resolvers";
-import type { GraphQLFormattedError } from "graphql";
 
 // For static export compatibility
 export const dynamic = "force-static";
 
-interface GraphQLHandler {
-  (req: NextRequest): Promise<Response | void>;
-}
+type GraphQLHandler = (req: NextRequest) => Promise<Response | undefined>;
 
 let apolloServer: ApolloServer;
-let handler: GraphQLHandler;
+const handler: GraphQLHandler =
+  initializeApolloServer() as unknown as GraphQLHandler;
 
 async function initializeApolloServer() {
   try {
@@ -49,23 +48,20 @@ async function initializeApolloServer() {
     return startServerAndCreateNextHandler<NextRequest>(apolloServer, {
       context: async (req: NextRequest) => ({ req }),
     });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Failed to initialize Apollo Server:", error);
 
     // Fallback handler for initialization errors
     return async () => {
       return new Response(
         JSON.stringify({ error: "GraphQL server initialization failed" }),
-        { 
+        {
           status: 500,
-          headers: { 'Content-Type': 'application/json' }
+          headers: { "Content-Type": "application/json" },
         }
       );
     };
   }
 }
-
-// Initialize the handler
-handler = initializeApolloServer() as unknown as GraphQLHandler;
 
 export { handler as GET, handler as POST };

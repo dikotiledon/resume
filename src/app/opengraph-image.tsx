@@ -14,13 +14,13 @@ export const contentType = "image/png";
 export default async function Image() {
   // Handle StaticImageData by extracting the src property
   // For static export, we need to use an absolute URL
-  const avatarData = typeof RESUME_DATA.avatarUrl === 'string' 
-    ? null 
-    : RESUME_DATA.avatarUrl;
-    
-  const avatarUrl = typeof RESUME_DATA.avatarUrl === 'string' 
-    ? RESUME_DATA.avatarUrl 
-    : `https://cv.riandikartiko.com${RESUME_DATA.avatarUrl.src}`;
+  const avatarData =
+    typeof RESUME_DATA.avatarUrl === "string" ? null : RESUME_DATA.avatarUrl;
+
+  const avatarUrl =
+    typeof RESUME_DATA.avatarUrl === "string"
+      ? RESUME_DATA.avatarUrl
+      : `https://cv.riandikartiko.com${RESUME_DATA.avatarUrl.src}`;
 
   return new ImageResponse(
     <div

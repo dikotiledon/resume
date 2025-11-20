@@ -11,8 +11,8 @@ import {
   CommandList,
   CommandSeparator,
 } from "@/components/ui/command";
-import { Button } from "./ui/button";
 import { useLanguage } from "@/contexts/language-context";
+import { Button } from "./ui/button";
 
 interface Props {
   links: { url: string; title: string }[];
@@ -20,7 +20,7 @@ interface Props {
 
 export const CommandMenu = ({ links }: Props) => {
   const [open, setOpen] = React.useState(false);
-  const { language, setLanguage } = useLanguage();
+  const { setLanguage } = useLanguage();
   const isMac: boolean =
     typeof window !== "undefined"
       ? window.navigator.userAgent.indexOf("Mac") > -1
@@ -71,7 +71,7 @@ export const CommandMenu = ({ links }: Props) => {
             <CommandItem
               onSelect={() => {
                 setOpen(false);
-                setLanguage('en');
+                setLanguage("en");
               }}
             >
               <span>Switch to English</span>
@@ -79,7 +79,7 @@ export const CommandMenu = ({ links }: Props) => {
             <CommandItem
               onSelect={() => {
                 setOpen(false);
-                setLanguage('id');
+                setLanguage("id");
               }}
             >
               <span>Switch to Indonesian</span>

@@ -253,7 +253,14 @@ export const RESUME_DATA: ResumeData = {
     // Projects from work experience at Samsung Electronics Indonesia
     {
       title: "Bonded Zone Inventory Monitoring",
-      techStack: ["PHP", "JavaScript", "Laravel", "Nginx", "Redis", "Microsoft SQL Server"],
+      techStack: [
+        "PHP",
+        "JavaScript",
+        "Laravel",
+        "Nginx",
+        "Redis",
+        "Microsoft SQL Server",
+      ],
       description:
         "Bonded Zone Inventory Monitoring is a Laravel web system that consolidates ERP and non‑ERP inventory to provide near‑real‑time, auditable customs reports, exports, and role‑based access for PER‑09/BC/2014 and AEO compliance.",
       link: {
@@ -263,7 +270,15 @@ export const RESUME_DATA: ResumeData = {
     },
     {
       title: "IT Strategy & Execution System",
-      techStack: ["PHP", "JavaScript", "Python", "SQL", ".NET", "Vue.js", "Node.js"],
+      techStack: [
+        "PHP",
+        "JavaScript",
+        "Python",
+        "SQL",
+        ".NET",
+        "Vue.js",
+        "Node.js",
+      ],
       description:
         "Developed systems to support IT strategy execution, enabling Samsung's broader business strategy. Implemented solutions for scanning technical possibilities and diagnosing system fit with business goals.",
     },
