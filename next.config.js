@@ -3,17 +3,13 @@ const nextConfig = {
   // Enable React strict mode for better development experience
   reactStrictMode: true,
 
-  // Internationalization
-  i18n: {
-    locales: ['en', 'id'],
-    defaultLocale: 'en',
-  },
+  // Enable static export for static hosting (nginx/Apache)
+  output: 'export',
 
-  // Optimize images
+  // Optimize images - use unoptimized since we're doing static export
   images: {
+    unoptimized: true,
     domains: ['avatars.githubusercontent.com'],
-    formats: ['image/avif', 'image/webp'],
-    minimumCacheTTL: 60,
   },
 
   // Compress output
