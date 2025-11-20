@@ -1,4 +1,4 @@
-import IdCardImage from "@/images/Id Card.jpg";
+import IdCardImage from "@/images/id-card.jpg";
 import type { ResumeData } from "@/lib/types";
 
 export const RESUME_DATA: ResumeData = {
