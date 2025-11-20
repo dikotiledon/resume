@@ -6,15 +6,14 @@ export const RESUME_DATA: ResumeData = {
   initials: "Diko",
   location: "Jakarta, Indonesia",
   locationLink: "https://www.google.com/maps/place/Jakarta",
-  about: "IT / Software Developer / Full Stack Engineer",
+  about: "Full Stack Engineer with strong Systems & Infrastructure background",
   summary: (
     <>
-      Full Stack & Systems Engineer with end-to-end experience from web
-      applications to infrastructure. I design, build, and operate systems using
+      Full Stack engineer with a systems and infrastructure focus. I design,
+      build, and operate web applications and internal tools end-to-end using
       PHP/Laravel, JavaScript/TypeScript (React/Next.js, Vue.js), and
-      Debian-based Linux, often bridging development and operations. I enjoy
-      turning business requirements into reliable, secure, and maintainable
-      systems.
+      Debian-based Linux. I enjoy bridging product and operations to turn
+      business requirements into reliable, secure, and maintainable systems.
     </>
   ),
   avatarUrl: IdCardImage,
@@ -156,33 +155,45 @@ export const RESUME_DATA: ResumeData = {
       ),
     },
   ],
+  achievements: [
+    {
+      title: "Outstanding EHS Contribution – Safety CoC System",
+      issuer: "PT. Samsung Electronics Indonesia",
+      date: "July 2023",
+      description: (
+        <>
+          Designed and implemented the SafetyCoC mobile system that enables all
+          employees to report incidents, suggestions, questions, and SOP
+          updates. The system helped reduce safety incidents and line-stop
+          production events by around 50% within the first month of use, and in
+          some periods almost eliminated them entirely.
+        </>
+      ),
+      certificateImageUrl: "/images/awards/samsung-safety-coc.jpg",
+    },
+    {
+      title: "Outstanding System Innovation – SEIN-P Portal",
+      issuer: "PT. Samsung Electronics Indonesia",
+      date: "November 2023",
+      description: (
+        <>
+          Led the development of the SEIN-P Portal, a new system innovation
+          that integrates Samsung Knox Portal APIs and Corporate Active
+          Directory. The portal provides a secure, centralized foundation for
+          new local system development while complying with HQ security
+          policies.
+        </>
+      ),
+      certificateImageUrl: "/images/awards/samsung-system-innovation.jpg",
+    },
+  ],
   skills: [
-    "PHP 7.4 - 8.4 (Laravel , CodeIgniter)",
-    "Python (Flask, FastAPI)",
-    ".NET (C#)",
-    "Kotlin (Android)",
-    "JavaScript (ES6+)",
-    "React/Next.js",
-    "Vue.js/Nuxt.js",
-    "Node.js",
-    "Tailwind CSS",
-    "TypeScript",
-    "Design Systems",
-    "System Architecture",
-    "WebSockets",
-    "RESTs API",
-    "CI/CD (GitHub Actions, GitLab CI, Jenkins)",
-    "Docker & Docker Compose",
-    "Linux Server Management (Debian Based)",
-    "Web Server (Nginx, Apache)",
-    "Database (MySQL, Microsoft SQL Server, Redis)",
-    "Tunneling (VMess, VLESS, Shadowsocks, Trojan, etc)",
-    "DNS Servers (Pihole, Unbound, Dnsdist, PowerDNS)",
-    "Cloudflare (CDN, DNS, Workers)",
-    "Proxy Servers (Haproxy, Nginx, Squid)",
-    "Load Balancers (Haproxy, Nginx)",
-    "Version Control (Git, GitHub, GitLab, Bitbucket)",
-    "Microsoft Office (Word, Excel, PowerPoint, etc)",
+    "Languages & Backend (PHP, Python, .NET, Kotlin)",
+    "Frontend & UI (React/Next.js, Vue/Nuxt, Tailwind, TypeScript)",
+    "Architecture & APIs (System Architecture, WebSockets, REST)",
+    "DevOps & Infrastructure (CI/CD, Docker, Linux, Nginx/Apache, MySQL/MSSQL/Redis)",
+    "Networking & Security (Tunneling, DNS, Cloudflare, Proxy, Load Balancer)",
+    "Tools (Git, GitHub, GitLab, Bitbucket)",
   ],
   workProjects: [
     // Projects from work experience at Samsung Electronics Indonesia

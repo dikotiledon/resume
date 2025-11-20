@@ -47,6 +47,13 @@ export interface ResumeData {
     description: string | React.ReactNode;
   }>;
   skills: string[];
+  achievements?: Array<{
+    title: string;
+    issuer?: string;
+    date?: string;
+    description: string | React.ReactNode;
+    certificateImageUrl?: string;
+  }>;
   workProjects: Array<{
     title: string;
     techStack: string[];
@@ -121,6 +128,7 @@ export interface GraphQLMe {
   education: GraphQLEducation[];
   work: GraphQLWork[];
   skills: string[];
+  achievements?: GraphQLProject[];
   workProjects: GraphQLProject[];
   projects: GraphQLProject[];
 }
@@ -175,6 +183,14 @@ export function resumeDataToGraphQL(data: ResumeData): GraphQLMe {
       description: reactToString(job.description),
     })),
     skills: data.skills,
+    achievements: data.achievements?.map((achievement) => ({
+      title: achievement.title,
+      techStack: [],
+      description: reactToString(achievement.description),
+      link: achievement.issuer
+        ? { label: achievement.issuer, href: "" }
+        : undefined,
+    })),
     workProjects: data.workProjects.map((project) => ({
       title: project.title,
       techStack: project.techStack,

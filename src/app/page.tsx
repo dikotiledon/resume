@@ -5,6 +5,7 @@ import { SectionErrorBoundary } from "@/components/section-error-boundary";
 import { SectionSkeleton } from "@/components/section-skeleton";
 import { RESUME_DATA } from "@/data/resume-data";
 import { generateResumeStructuredData } from "@/lib/structured-data";
+import { Achievements } from "./components/Achievements";
 import { Education } from "./components/Education";
 import Header from "./components/Header.client";
 import Projects from "./components/Projects.client";
@@ -95,7 +96,6 @@ export default function ResumePage() {
                 <Summary summary={RESUME_DATA.summary} />
               </Suspense>
             </SectionErrorBoundary>
-
             <SectionErrorBoundary sectionName="Work Experience">
               <Suspense fallback={<SectionSkeleton lines={6} />}>
                 <WorkExperience work={RESUME_DATA.work} />
@@ -105,6 +105,12 @@ export default function ResumePage() {
             <SectionErrorBoundary sectionName="Education">
               <Suspense fallback={<SectionSkeleton lines={3} />}>
                 <Education education={RESUME_DATA.education} />
+              </Suspense>
+            </SectionErrorBoundary>
+
+            <SectionErrorBoundary sectionName="Achievements">
+              <Suspense fallback={<SectionSkeleton lines={2} />}>
+                <Achievements achievements={RESUME_DATA.achievements ?? []} />
               </Suspense>
             </SectionErrorBoundary>
 
