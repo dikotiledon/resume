@@ -159,6 +159,19 @@ function PrintContact({ contact, personalWebsiteUrl }: PrintContactProps) {
           {contact.tel}
         </a>
       )}
+      {contact.social.find((s) => s.icon === "linkedin") && (
+        <>
+          <span aria-hidden="true">/</span>
+          <a
+            className="underline hover:text-foreground/70"
+            href={contact.social.find((s) => s.icon === "linkedin")?.url}
+          >
+            {contact.social
+              .find((s) => s.icon === "linkedin")
+              ?.url?.replace("https://", "")}
+          </a>
+        </>
+      )}
     </div>
   );
 }
